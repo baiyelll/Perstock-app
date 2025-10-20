@@ -1,3 +1,4 @@
+"use client";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -6,8 +7,14 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useRouter } from "next/navigation"
+import { use } from "react";
 
 const UserDropdown = () => {
+    const router = useRouter();
+    const handleSignOut=async()=>{
+        router.push('/sign-in');
+    }
     return (
         <DropdownMenu>
             <DropdownMenuTrigger>Open</DropdownMenuTrigger>
